@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RC Consulting — Compraventa de Vehículos de Ocasión en Sabadell</title>
+<meta name="description" content="RC Consulting: asesoría especializada en compraventa de vehículos en Sabadell. BMW, Audi, Mercedes, Porsche. Garantía 1 año incluida.">
+<meta name="keywords" content="comprar coche Sabadell, vender coche Sabadell, coches segunda mano Sabadell, RC Consulting, coches ocasión Barcelona">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="RC Consulting — Compraventa de Vehículos · Sabadell">
+<meta property="og:description" content="Asesoría especializada en compraventa de vehículos. Garantía 1 año. Sabadell.">
+<meta property="og:image" content="https://www.rcconsulting.es/cdn/shop/files/IMG_7009.jpg?v=1773694817">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#111;--white:#fff;--off:#f6f6f6;--border:#e5e5e5;--red:#cc0000;--gray:#777;--lgray:#bbb;--font:'Montserrat',sans-serif;--nav:64px}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--white);color:var(--black);overflow-x:hidden}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font-family:var(--font);cursor:pointer}
+.page{display:none;min-height:100vh}.page.active{display:block}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav);background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;transition:box-shadow .3s}
+nav.sc{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.nav-logo{cursor:pointer}.nav-logo img{height:36px;object-fit:contain}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--gray);transition:color .2s;cursor:pointer;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--black)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.langs{display:flex;gap:3px}
+.lb{background:none;border:1px solid var(--border);padding:5px 8px;font-size:10px;font-weight:700;color:var(--gray);transition:all .2s}
+.lb.active,.lb:hover{background:var(--black);color:#fff;border-color:var(--black)}
+.nav-cta{background:var(--black);color:#fff;border:none;padding:10px 20px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:background .2s}
+.nav-cta:hover{background:var(--red)}
+.burger{display:none;background:none;border:none;font-size:22px;color:var(--black)}
+.mob{display:none;position:fixed;inset:var(--nav) 0 0 0;background:#fff;z-index:800;flex-direction:column;align-items:center;justify-content:center;gap:24px;overflow-y:auto}
+.mob.open{display:flex}
+.mob a{font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;height:92vh;min-height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding-top:var(--nav)}
+.hero-bg{position:absolute;inset:0}
+.hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s;filter:brightness(.38)}
+.hs.active{opacity:1}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.38)}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,.3),rgba(0,0,0,.55))}
+.hero-c{position:relative;z-index:2;text-align:center;color:#fff;padding:0 24px;max-width:680px}
+.hero-eye{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px;animation:fU .8s .2s both}
+.hero-h{font-size:clamp(30px,5vw,62px);font-weight:800;line-height:1.05;margin-bottom:16px;animation:fU .8s .35s both}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.6);max-width:460px;margin:0 auto 44px;line-height:1.85;font-weight:300;animation:fU .8s .5s both}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fU .8s .65s both}
+.btn-p{padding:14px 34px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;font-family:var(--font);transition:all .25s;background:#fff;color:#111}
+.btn-p:hover{background:var(--red);color:#fff}
+.btn-s{padding:14px 34px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;font-family:var(--font);transition:all .25s}
+.btn-s:hover{background:#fff;color:#111}
+.hero-scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.3);font-size:10px;letter-spacing:3px;text-transform:uppercase;animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+@keyframes fU{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* INFO BAND */
+.band{background:var(--black);color:#fff;display:flex;justify-content:center;flex-wrap:wrap}
+.bi{padding:13px 24px;font-size:12px;font-weight:500;border-right:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:8px}
+.bi:last-child{border-right:none}.bi span{color:rgba(255,255,255,.4);font-size:11px}
+
+/* SECTIONS */
+.sec{padding:80px}
+.tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.sh{font-size:clamp(24px,2.8vw,40px);font-weight:800;line-height:1.1;margin-bottom:48px}
+
+/* WHY */
+.wg{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.wn{font-size:52px;font-weight:800;color:rgba(0,0,0,.05);line-height:1;margin-bottom:12px}
+.wh{font-size:14px;font-weight:700;margin-bottom:8px}
+.wp{font-size:13px;color:var(--gray);line-height:1.8}
+
+/* FEAT */
+.fh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:12px}
+.sa{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-bottom:1.5px solid var(--black);padding-bottom:2px;cursor:pointer;transition:color .2s,border-color .2s}
+.sa:hover{color:var(--red);border-color:var(--red)}
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+
+/* CARD */
+.cc{background:#fff;cursor:pointer;overflow:hidden;transition:box-shadow .3s}
+.cc:hover{box-shadow:0 16px 48px rgba(0,0,0,.12);position:relative;z-index:2}
+.ci{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--off)}
+.ci img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.cc:hover .ci img{transform:scale(1.07)}
+.bdg{position:absolute;top:12px;left:12px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 10px;background:var(--black);color:#fff}
+.bdg.o{background:var(--red)}
+.cb{padding:18px 20px 22px}
+.cbr{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.cn{font-size:14px;font-weight:700;line-height:1.35;margin-bottom:12px;min-height:38px;overflow:visible}
+.csp{display:flex;flex-wrap:wrap;gap:5px 12px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.sp{font-size:11px;color:var(--gray);font-weight:500;display:flex;align-items:center;gap:4px}
+.sp::before{content:'';display:inline-block;width:3px;height:3px;border-radius:50%;background:var(--lgray);flex-shrink:0}
+.cf{display:flex;align-items:center;justify-content:space-between}
+.cpr{font-size:19px;font-weight:800}
+.cop{font-size:11px;color:var(--lgray);text-decoration:line-through;margin-left:5px;font-weight:400}
+.bsm{background:none;border:1.5px solid var(--black);color:var(--black);padding:7px 14px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s}
+.bsm:hover{background:var(--black);color:#fff}
+
+/* INSTA */
+.ib{background:var(--black);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:44px 80px;gap:28px;flex-wrap:wrap}
+.ib h3{font-size:clamp(18px,2vw,26px);font-weight:800}
+.ib p{font-size:13px;color:rgba(255,255,255,.5);margin-top:5px}
+.ibtn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;border:none;padding:13px 26px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:opacity .2s;text-decoration:none;font-family:var(--font)}
+.ibtn:hover{opacity:.85}
+
+/* ABOUT */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.aim{position:relative}.aim img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.abadge{position:absolute;bottom:-16px;right:-16px;background:var(--black);color:#fff;padding:20px 24px;text-align:center}
+.abadge strong{font-size:32px;font-weight:800;display:block}
+.abadge span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--lgray)}
+.sr{display:flex;gap:28px;margin-bottom:28px;flex-wrap:wrap}
+.st strong{font-size:28px;font-weight:800;display:block}
+.st span{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gray)}
+.at p{font-size:14px;line-height:1.9;color:var(--gray);margin-bottom:16px}
+
+/* INVENTORY */
+.ih{background:var(--off);padding:56px 80px 40px;padding-top:calc(var(--nav)+56px)}
+.ih h1{font-size:clamp(24px,3vw,42px);font-weight:800;margin-bottom:8px}
+.ih p{font-size:14px;color:var(--gray)}
+.ic{display:flex;align-items:center;justify-content:space-between;padding:18px 80px;border-bottom:1px solid var(--border);background:#fff;flex-wrap:wrap;gap:12px;position:sticky;top:var(--nav);z-index:50}
+.ic-ct{font-size:13px;font-weight:600;color:var(--gray)}
+select{background:#fff;border:1px solid var(--border);padding:9px 32px 9px 12px;font-size:12px;font-family:var(--font);font-weight:600;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23777'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;cursor:pointer}
+select:focus{outline:none;border-color:var(--black)}
+.ig{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;background:var(--border)}
+
+/* SLIDER */
+.sw{position:relative;overflow:hidden;background:linear-gradient(135deg,#1a1a1a,#2c2c2c);aspect-ratio:16/9;max-height:580px}
+.st2{display:flex;height:100%;transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.st2 img{flex-shrink:0;width:100%;height:100%;object-fit:contain}
+.sb{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.92);border:none;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;z-index:10;font-weight:700;transition:background .2s}
+.sb:hover{background:#fff}
+.sp2{left:14px}.sn{right:14px}
+.sds{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;flex-wrap:wrap;max-width:80%;justify-content:center}
+.sd{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;border:none;transition:background .2s}
+.sd.active{background:#fff}
+.sc2{position:absolute;top:12px;right:14px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;z-index:10}
+
+/* DETAIL */
+.dw{padding-top:var(--nav)}
+.bl{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);cursor:pointer;padding:16px 80px;border-bottom:1px solid var(--border);background:#fff;transition:color .2s;width:100%}
+.bl:hover{color:var(--black)}
+.dtop{display:grid;grid-template-columns:1fr 360px;border-top:1px solid var(--border)}
+.dl{padding:40px 56px;border-top:1px solid var(--border)}
+.dbr2{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:7px}
+.dt{font-size:clamp(18px,2.5vw,30px);font-weight:800;margin-bottom:26px}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-bottom:32px}
+.sb2{background:#fff;padding:14px 16px}
+.sl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:4px}
+.sv{font-size:14px;font-weight:700}
+.dd{font-size:13px;line-height:1.9;color:var(--gray);white-space:pre-line}
+.es{margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.es h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.el{display:flex;flex-wrap:wrap;gap:7px}
+.et{background:var(--off);padding:6px 12px;font-size:11px;font-weight:500;border:1px solid var(--border)}
+.dr{padding:32px;background:var(--off);border-left:1px solid var(--border)}
+.pl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:7px}
+.bp{font-size:32px;font-weight:800;margin-bottom:5px}
+.op{font-size:13px;color:var(--lgray);text-decoration:line-through;margin-bottom:26px}
+.wab{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#25D366;color:#fff;border:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;transition:background .2s;text-decoration:none;font-family:var(--font)}
+.wab:hover{background:#1ebe5d}
+.csb{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px;background:var(--black);color:#fff;border:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;transition:background .2s;font-family:var(--font)}
+.csb:hover{background:#333}
+.gb{background:#fff;border:1px solid var(--border);padding:16px}
+.gb h4{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.gb p{font-size:12px;color:var(--gray);line-height:1.7}
+.cs{background:var(--off);border-top:1px solid var(--border);padding:40px 56px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.cs h4{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:9px}
+.cv{font-size:14px;font-weight:700;margin-bottom:3px}
+.cu{font-size:12px;color:var(--gray);margin-bottom:11px}
+.dcb{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:none;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:var(--font);transition:all .2s;text-decoration:none}
+.dcb.wa{background:#25D366;color:#fff}.dcb.wa:hover{background:#1ebe5d}
+.dcb.bk{background:var(--black);color:#fff}.dcb.bk:hover{background:#333}
+
+/* GALLERY */
+.gh{background:var(--off);padding:56px 80px 40px;padding-top:calc(var(--nav)+56px)}
+
+/* SELL */
+.selh{background:var(--off);padding:72px 80px;padding-top:calc(var(--nav)+72px)}
+.selh h1{font-size:clamp(24px,3vw,42px);font-weight:800;margin-bottom:12px}
+.selh p{font-size:14px;color:var(--gray);max-width:520px;line-height:1.85}
+.ssw{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
+.sstep{background:#fff;padding:40px 44px}
+.ssn{font-size:48px;font-weight:800;color:rgba(0,0,0,.05);line-height:1;margin-bottom:12px}
+.ssh{font-size:15px;font-weight:800;margin-bottom:8px}
+.ssp{font-size:13px;color:var(--gray);line-height:1.8}
+.scta{background:var(--off);padding:52px 80px;text-align:center}
+.scta h3{font-size:20px;font-weight:800;margin-bottom:10px}
+.scta p{font-size:14px;color:var(--gray);max-width:440px;margin:0 auto 22px;line-height:1.8}
+
+/* CONTACT */
+.cw{padding-top:var(--nav);display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - var(--nav))}
+.cl{background:var(--black);color:#fff;padding:60px;display:flex;flex-direction:column;justify-content:center}
+.cl h1{font-size:clamp(20px,2.5vw,34px);font-weight:800;margin-bottom:10px}
+.cl>p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:40px;max-width:320px}
+.ci2{display:flex;align-items:flex-start;gap:13px;margin-bottom:20px}
+.cic{width:40px;height:40px;flex-shrink:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:17px}
+.cil{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:3px;font-weight:600}
+.civ{font-size:13px;font-weight:600;color:#fff}.civ a{color:#fff}
+.mw{margin-top:32px}.mw iframe{width:100%;height:180px;border:none;filter:grayscale(100%) invert(85%) brightness(.9)}
+.cr{padding:60px;display:flex;flex-direction:column;justify-content:center}
+.cr h2{font-size:20px;font-weight:800;margin-bottom:6px}
+.cr>p{font-size:13px;color:var(--gray);margin-bottom:26px;line-height:1.7}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg2{margin-bottom:12px}
+.fg2 label{display:block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:5px}
+.fg2 input,.fg2 select,.fg2 textarea{width:100%;padding:10px 12px;border:1px solid var(--border);font-family:var(--font);font-size:13px;background:#fff;transition:border-color .2s;resize:vertical}
+.fg2 input:focus,.fg2 select:focus,.fg2 textarea:focus{outline:none;border-color:var(--black)}
+.fg2 textarea{min-height:85px}
+.fs{width:100%;padding:13px;background:var(--black);color:#fff;border:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-top:4px;transition:background .2s;font-family:var(--font)}
+.fs:hover{background:var(--red)}
+.od{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--lgray);font-size:12px}
+.od::before,.od::after{content:'';flex:1;height:1px;background:var(--border)}
+.wb{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px;background:#25D366;color:#fff;border:none;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:background .2s;text-decoration:none;font-family:var(--font)}
+.wb:hover{background:#1ebe5d}
+
+/* FOOTER */
+footer{background:var(--off);border-top:1px solid var(--border);padding:52px 80px 28px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.fbr p{font-size:13px;color:var(--gray);line-height:1.8;margin-top:12px;max-width:260px}
+.fc h4{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.fc a{font-size:13px;color:var(--gray);display:block;margin-bottom:8px;transition:color .2s;cursor:pointer}
+.fc a:hover{color:var(--black)}
+.fc p{font-size:13px;color:var(--gray);margin-bottom:7px;line-height:1.6}
+.fb{display:flex;align-items:center;justify-content:space-between;padding-top:22px;border-top:1px solid var(--border);font-size:12px;color:var(--gray);flex-wrap:wrap;gap:10px}
+.sr2{display:flex;gap:7px}
+.soc{width:30px;height:30px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:all .2s;text-decoration:none;color:var(--gray)}
+.soc:hover{background:var(--black);color:#fff;border-color:var(--black)}
+.waf{position:fixed;bottom:20px;right:20px;z-index:950;width:50px;height:50px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);font-size:22px;text-decoration:none;transition:transform .2s}
+.waf:hover{transform:scale(1.1)}
+
+/* CALENDAR MODAL */
+.cm{position:fixed;inset:0;z-index:1200;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:20px}
+.cm.open{display:flex}
+.cmb{background:#fff;max-width:440px;width:100%;padding:36px;position:relative;max-height:90vh;overflow-y:auto}
+.cmb h3{font-size:18px;font-weight:800;margin-bottom:5px}
+.cmb>p{font-size:13px;color:var(--gray);margin-bottom:20px;line-height:1.7}
+.cmx{position:absolute;top:12px;right:12px;background:none;border:1px solid var(--border);width:30px;height:30px;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.cr2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.vis{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.wg{grid-template-columns:repeat(2,1fr)}.ft{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){
+  nav{padding:0 16px}.nav-links{display:none}.burger{display:block}
+  .sec{padding:48px 20px}.fg{grid-template-columns:1fr 1fr}.ag{grid-template-columns:1fr;gap:32px}
+  .abadge{bottom:10px;right:10px}.ih,.ic{padding-left:20px;padding-right:20px}
+  .dtop{grid-template-columns:1fr}.dl{padding:24px 20px}
+  .dr{border-left:none;border-top:1px solid var(--border);padding:20px}
+  .bl{padding:12px 20px}.cs{grid-template-columns:1fr;padding:24px 20px}
+  .cw{grid-template-columns:1fr}.cl,.cr{padding:40px 20px}
+  .solh,.smsg,.gh,.selh,.scta{padding:40px 20px}
+  .ssw{grid-template-columns:1fr}.ib{padding:32px 20px}
+  .ft{grid-template-columns:1fr 1fr;gap:24px}
+  footer{padding:40px 20px 24px}
+  .band{flex-direction:column}.bi{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);justify-content:center}
+  .sg{grid-template-columns:repeat(2,1fr)}.fr{grid-template-columns:1fr}
+}
+@media(max-width:580px){
+  .fg{grid-template-columns:1fr}.ft{grid-template-columns:1fr}.ig{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;align-items:center}.btn-p,.btn-s{width:200px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="nv">
+  <div class="nav-logo" onclick="go('home')">
+    <img src="https://www.rcconsulting.es/cdn/shop/files/10_a96599a6-d6a7-4bed-aef7-abe66db731fc_80x.png?v=1647543918" alt="RC Consulting">
+  </div>
+  <div class="nav-links">
+    <a onclick="go('home')" id="nl-home">Inicio</a>
+    <a onclick="go('buy')" id="nl-buy">Comprar</a>
+    <a onclick="go('gallery')" id="nl-gallery">Galería</a>
+    <a onclick="go('sell')" id="nl-sell">Vender</a>
+    <a onclick="go('about')" id="nl-about">Nosotros</a>
+    <a onclick="go('contact')" id="nl-contact">Contacto</a>
+  </div>
+  <div class="nav-r">
+    <div class="langs">
+      <button class="lb active" onclick="setL('es')">ES</button>
+      <button class="lb" onclick="setL('ca')">CA</button>
+      <button class="lb" onclick="setL('en')">EN</button>
+    </div>
+    <button class="nav-cta" onclick="go('contact')" id="ncta">Contactar</button>
+    <button class="burger" onclick="toggleM()">&#9776;</button>
+  </div>
+</nav>
+
+<div class="mob" id="mob">
+  <a onclick="go('home');toggleM()">Inicio</a>
+  <a onclick="go('buy');toggleM()">Comprar</a>
+  <a onclick="go('gallery');toggleM()">Galería</a>
+  <a onclick="go('sell');toggleM()">Vender</a>
+  <a onclick="go('about');toggleM()">Nosotros</a>
+  <a onclick="go('contact');toggleM()">Contacto</a>
+  <div class="langs" style="margin-top:8px">
+    <button class="lb active" onclick="setL('es');toggleM()">ES</button>
+    <button class="lb" onclick="setL('ca');toggleM()">CA</button>
+    <button class="lb" onclick="setL('en');toggleM()">EN</button>
+  </div>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg">
+      <video class="hero-video" id="hv" autoplay muted loop playsinline poster="https://www.rcconsulting.es/cdn/shop/files/IMG_7009.jpg?v=1773694817&width=1400">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-driving-a-sports-car-at-high-speed-1196-large.mp4" type="video/mp4">
+      </video>
+      <div id="hslides"></div>
+    </div>
+    <div class="hero-ov"></div>
+    <div class="hero-c">
+      <p class="hero-eye" id="te">Asesoría de Compraventa · Sabadell</p>
+      <h1 class="hero-h" id="th">Compra o vende tu vehículo con total seguridad</h1>
+      <p class="hero-sub" id="ts">Asesoramiento personalizado, garantía de 1 año y gestión completa. Sin estrés, al mejor precio.</p>
+      <div class="hero-btns">
+        <button class="btn-p" onclick="go('buy')" id="tb">Quiero Comprar</button>
+        <button class="btn-s" onclick="go('contact')" id="tv">Vender mi coche</button>
+      </div>
+    </div>
+    <div class="hero-scroll">&#8595;</div>
+  </section>
+  <div class="band">
+    <div class="bi"><span>Horario</span>Lun&ndash;Vie 9:00&ndash;13:30&nbsp;&middot;&nbsp;16:00&ndash;19:30</div>
+    <div class="bi"><span>Sábados</span>Cita previa</div>
+    <div class="bi"><span>Dirección</span>C/Taulí 15, Sabadell</div>
+    <div class="bi"><span>Tel</span>+34 648 087 165</div>
+    <div class="bi"><span>Email</span>info@rcconsulting.es</div>
+  </div>
+  <section class="sec rv" style="background:var(--off)">
+    <p class="tag">Por qué elegirnos</p>
+    <h2 class="sh">La asesoría que cambia la experiencia de compraventa</h2>
+    <div class="wg">
+      <div><div class="wn">01</div><h3 class="wh">Garantía 1 año</h3><p class="wp">Todos los vehículos incluyen garantía de un año. Revisión completa antes de la entrega.</p></div>
+      <div><div class="wn">02</div><h3 class="wh">Todo incluido</h3><p class="wp">Fotos, anuncios, visitas, negociaciones, contratos y pagos. Tú solo disfrutas.</p></div>
+      <div><div class="wn">03</div><h3 class="wh">Asesoramiento real</h3><p class="wp">No somos un portal. Somos asesores que te acompañan de principio a fin.</p></div>
+      <div><div class="wn">04</div><h3 class="wh">Showroom Sabadell</h3><p class="wp">C/Taulí 15. Atención presencial y personalizada, con o sin cita.</p></div>
+    </div>
+  </section>
+  <section class="sec rv">
+    <div class="fh">
+      <div><p class="tag">En venta ahora</p><h2 class="sh" style="margin-bottom:0">Destacados</h2></div>
+      <a class="sa" onclick="go('buy')">Ver todos los vehículos</a>
+    </div>
+    <div class="fg" id="featG"></div>
+  </section>
+  <div class="ib rv">
+    <div><h3>Síguenos en Instagram</h3><p>Descubre nuestros últimos vehículos y novedades.</p></div>
+    <a class="ibtn" href="https://www.instagram.com/rcsalesconsulting/" target="_blank">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @rcsalesconsulting
+    </a>
+  </div>
+  <section class="sec rv" style="background:var(--off)">
+    <p class="tag">Nuestros clientes</p>
+    <h2 class="sh">+100 vehículos vendidos.<br>Clientes que vuelven.</h2>
+    <p style="font-size:14px;color:var(--gray);max-width:560px;line-height:1.9;margin-bottom:26px">Somos una asesoría joven especializada en compraventa de vehículos. Transparencia, tranquilidad y asesoramiento personalizado en cada operación.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <a class="sa" onclick="go('gallery')">Ver galería completa</a>
+    </div>
+  </section>
+</div>
+
+<!-- BUY -->
+<div class="page" id="page-buy">
+  <div class="ih"><p class="tag">Vehículos en venta</p><h1>Inventario actual</h1><p>Todos los vehículos incluyen garantía de 1 año y han sido revisados antes de la venta.</p></div>
+  <div class="ib" style="background:var(--black);padding:32px 80px">
+    <div><h3 style="font-size:18px">¿Buscas algo en concreto o quieres más información?</h3><p>Escríbenos y te asesoramos sin compromiso sobre cualquier vehículo, antes de ver el catálogo.</p></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="wb" href="https://wa.me/34648087165?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20un%20veh%C3%ADculo." target="_blank" style="width:auto;padding:13px 26px">&#128172; WhatsApp</a>
+      <button class="btn-p" onclick="go('contact')">Contactar</button>
+    </div>
+  </div>
+  <div class="ic"><p class="ic-ct" id="cnt"></p>
+    <select id="srt" onchange="sortC()">
+      <option value="">Ordenar por relevancia</option>
+      <option value="pa">Precio: menor a mayor</option>
+      <option value="pd">Precio: mayor a menor</option>
+      <option value="yd">Año: más reciente</option>
+    </select>
+  </div>
+  <div class="ig" id="invG"></div>
+</div>
+
+<!-- DETAIL -->
+<div class="page" id="page-detail">
+  <div class="dw">
+    <div class="bl" onclick="go('buy')">&#8592; Volver a vehículos</div>
+    <div class="dtop"><div id="dslider"></div><div class="dr" id="dright"></div></div>
+    <div class="dl" id="dleft"></div>
+    <div class="cs" id="dcs"></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="page" id="page-gallery">
+  <div class="gh"><p class="tag">Todos los vehículos</p><h1 style="font-size:clamp(24px,3vw,42px);font-weight:800;margin-bottom:8px">Galería</h1><p style="font-size:14px;color:var(--gray)">Todos los vehículos que han pasado por RC Consulting, con todas sus fotografías.</p></div>
+  <div class="ig" id="galG"></div>
+</div>
+
+<!-- SELL -->
+<div class="page" id="page-sell">
+  <div class="selh"><p class="tag">Vende tu vehículo</p><h1>Sin estrés. Al mejor precio.</h1><p>Nos encargamos de todo el proceso. Tú nos confías el coche y nosotros lo vendemos al mejor precio posible.</p></div>
+  <div class="ssw">
+    <div class="sstep"><div class="ssn">01</div><h3 class="ssh">Contacta y pide cita</h3><p class="ssp">Escríbenos por WhatsApp o llámanos. Valoración gratuita sin compromiso, adaptamos la cita a tu horario.</p></div>
+    <div class="sstep"><div class="ssn">02</div><h3 class="ssh">Fotos y publicación profesional</h3><p class="ssp">Sesión fotográfica y publicación en los portales con mayor tráfico. Sin coste adicional para ti.</p></div>
+    <div class="sstep"><div class="ssn">03</div><h3 class="ssh">Gestión y filtro de clientes</h3><p class="ssp">Filtramos compradores serios, gestionamos visitas y llevamos las negociaciones al mejor precio.</p></div>
+    <div class="sstep"><div class="ssn">04</div><h3 class="ssh">Contratos, pago y entrega</h3><p class="ssp">Redactamos el contrato, supervisamos el pago y coordinamos la entrega. Proceso 100% seguro.</p></div>
+  </div>
+  <div class="scta">
+    <h3>¿Listo para vender?</h3>
+    <p>Contáctanos y te explicamos cómo conseguir el mejor precio por tu vehículo.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="wb" href="https://wa.me/34648087165?text=Hola%2C%20quiero%20vender%20mi%20coche." target="_blank" style="width:auto;padding:13px 26px">&#128172; WhatsApp directo</a>
+      <button class="btn-p" onclick="go('contact')">Formulario de contacto</button>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <section class="sec" style="padding-top:calc(var(--nav)+72px)">
+    <div class="ag">
+      <div class="aim rv">
+        <img src="https://www.rcconsulting.es/cdn/shop/files/IMG_7009.jpg?v=1773694817&width=900" alt="RC Consulting Sabadell">
+        <div class="abadge"><strong>+100</strong><span>Vehículos vendidos</span></div>
+      </div>
+      <div class="rv">
+        <p class="tag">Sobre nosotros</p>
+        <h2 class="sh" style="margin-bottom:22px">RC Consulting.<br>Una asesoría diferente.</h2>
+        <div class="sr"><div class="st"><strong>+100</strong><span>Gestionados</span></div><div class="st"><strong>1 año</strong><span>Garantía</span></div><div class="st"><strong>4.1&#9733;</strong><span>Valoración</span></div></div>
+        <div class="at">
+          <p>Somos una asesoría joven especializada en la compraventa de vehículos entre particulares. Queremos mejorar tu experiencia al comprar o vender tu coche para que no tengas que preocuparte de nada más que de disfrutarlo.</p>
+          <p>Nos encargamos de todo: fotos, anuncios, citas, negociaciones, contratos y pagos. Queremos que te sientas seguro y en buenas manos desde el principio hasta el final del proceso.</p>
+          <p>Showroom en C/Taulí 15, Sabadell. Lun–Vie 9:00–13:30 y 16:00–19:30. Sábados con cita previa.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
+          <button class="btn-p" style="background:var(--black);color:#fff" onclick="go('contact')">Contactar</button>
+          <a href="https://www.instagram.com/rcsalesconsulting/" target="_blank" class="ibtn" style="padding:13px 20px">@rcsalesconsulting</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <div class="cw">
+    <div class="cl">
+      <p class="tag" style="color:rgba(255,255,255,.4)">Estamos aquí</p>
+      <h1>Hablemos</h1>
+      <p>Cuéntanos qué necesitas y te respondemos lo antes posible.</p>
+      <div class="ci2"><div class="cic">&#128205;</div><div><div class="cil">Showroom</div><div class="civ">C/Taulí 15, 08208 Sabadell</div></div></div>
+      <div class="ci2"><div class="cic">&#128222;</div><div><div class="cil">Teléfono / WhatsApp</div><div class="civ"><a href="tel:+34648087165">+34 648 087 165</a></div></div></div>
+      <div class="ci2"><div class="cic">&#9993;</div><div><div class="cil">Email</div><div class="civ"><a href="mailto:info@rcconsulting.es">info@rcconsulting.es</a></div></div></div>
+      <div class="ci2"><div class="cic">&#128248;</div><div><div class="cil">Instagram</div><div class="civ"><a href="https://instagram.com/rcsalesconsulting" target="_blank">@rcsalesconsulting</a></div></div></div>
+      <div class="ci2"><div class="cic">&#128336;</div><div><div class="cil">Horario</div><div class="civ">Lun&ndash;Vie 9:00&ndash;13:30&nbsp;&middot;&nbsp;16:00&ndash;19:30<br>Sábados: cita previa</div></div></div>
+      <div class="mw"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.734865925068!2d2.1053846162119494!3d41.553337593652316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4951d178eb82b%3A0x94e925e1bba4dbfc!2sCarrer%20del%20Taul%C3%AD%2C%2015%2C%2008208%20Sabadell%2C%20Barcelona!5e0!3m2!1es!2ses!4v1647604957319!5m2!1ses!2ses" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+    <div class="cr">
+      <h2>Envíanos un mensaje</h2>
+      <p>Rellena el formulario y te respondemos en menos de 24 horas, o escríbenos por WhatsApp.</p>
+      <div class="fr">
+        <div class="fg2"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+        <div class="fg2"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+      </div>
+      <div class="fg2"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+      <div class="fg2"><label>Motivo</label><select><option>Quiero comprar un vehículo</option><option>Quiero vender mi vehículo</option><option>Información general</option><option>Otro</option></select></div>
+      <div class="fg2"><label>Mensaje</label><textarea placeholder="Cuéntanos qué necesitas&#8230;"></textarea></div>
+      <button class="fs" onclick="alert('¡Mensaje enviado! Te respondemos en menos de 24h.')">Enviar mensaje</button>
+      <div class="od">o contacta directamente</div>
+      <a class="wb" href="https://wa.me/34648087165?text=Hola%2C%20me%20interesa%20RC%20Consulting." target="_blank">&#128172; Abrir WhatsApp ahora</a>
+    </div>
+  </div>
+</div>
+
+<footer id="foot">
+  <div class="ft">
+    <div class="fbr">
+      <img src="https://www.rcconsulting.es/cdn/shop/files/10_a96599a6-d6a7-4bed-aef7-abe66db731fc_80x.png?v=1647543918" alt="RC Consulting" style="height:30px;object-fit:contain">
+      <p>Asesoría especializada en compraventa de vehículos. Sabadell, Barcelona. Garantía 1 año incluida.</p>
+      <div class="sr2" style="margin-top:16px">
+        <a class="soc" href="https://www.facebook.com/rcsalesconsulting" target="_blank">f</a>
+        <a class="soc" href="https://www.instagram.com/rcsalesconsulting/" target="_blank">ig</a>
+        <a class="soc" href="https://wa.me/34648087165" target="_blank">wa</a>
+      </div>
+    </div>
+    <div class="fc"><h4>Comprar</h4><a onclick="go('buy')">Ver inventario</a><a onclick="go('gallery')">Galería</a><a onclick="go('contact')">Pedir información</a></div>
+    <div class="fc"><h4>Vender</h4><a onclick="go('sell')">Cómo funciona</a><a onclick="go('sell')">Valoración gratuita</a><a onclick="go('gallery')">Vehículos vendidos</a></div>
+    <div class="fc"><h4>Contacto</h4><p>C/Taulí 15, 08208 Sabadell</p><a href="tel:+34648087165">+34 648 087 165</a><a href="mailto:info@rcconsulting.es">info@rcconsulting.es</a><a href="https://instagram.com/rcsalesconsulting" target="_blank">@rcsalesconsulting</a></div>
+  </div>
+  <div class="fb">
+    <span>© 2026 RC Consulting Asesoría de Compra y Venta S.L. · Sabadell</span>
+    <div class="sr2"><a class="soc" href="https://www.facebook.com/rcsalesconsulting" target="_blank">f</a><a class="soc" href="https://www.instagram.com/rcsalesconsulting/" target="_blank">ig</a><a class="soc" href="https://wa.me/34648087165" target="_blank">wa</a></div>
+  </div>
+</footer>
+
+<a class="waf" href="https://wa.me/34648087165?text=Hola%2C%20me%20interesa%20RC%20Consulting." target="_blank">&#128172;</a>
+
+<div class="cm" id="calM" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="cmb">
+    <button class="cmx" onclick="document.getElementById('calM').classList.remove('open')">&#215;</button>
+    <h3>Agendar cita</h3><p>Selecciona día y hora. Te confirmamos en menos de 1 hora.</p>
+    <div class="fg2"><label>Nombre</label><input type="text" placeholder="Nombre completo"></div>
+    <div class="fg2"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div>
+    <div class="cr2">
+      <div class="fg2"><label>Fecha</label><input type="date" min="2026-06-12"></div>
+      <div class="fg2"><label>Hora</label><select><option>9:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option></select></div>
+    </div>
+    <div class="fg2"><label>Motivo</label><select><option>Ver un vehículo</option><option>Vender mi coche</option><option>Consulta general</option></select></div>
+    <button class="fs" onclick="alert('Cita solicitada. Te confirmamos en menos de 1h.');document.getElementById('calM').classList.remove('open')">Confirmar cita</button>
+  </div>
+</div>
+
+<script>
+const CARS=[
+{id:1,brand:'Abarth',name:'595 Manual',year:2015,km:'108.000 km',fuel:'Gasolina',cv:'145 cv',caja:'Manual',traccion:'Delantera',color:'Blanco',etiqueta:'C',price:12600,old:null,badge:'Disponible',
+ extras:['Muelles Eibach homologados','Correa distribución nueva','2 llaves','ITV al día','Libre de siniestros','2 propietarios'],
+ imgs:['IMG_20572.jpg?v=1779817800','IMG_20582.jpg?v=1779817801','IMG_20583.jpg?v=1779817800','IMG_20584.jpg?v=1779817800','IMG_20585.jpg?v=1779817800','IMG_20586.jpg?v=1779817800','IMG_20587.jpg?v=1779817800','IMG_20588.jpg?v=1779817800','IMG_20589.jpg?v=1779817800','IMG_20590.jpg?v=1779817800','IMG_20591.jpg?v=1779817800','IMG_20592.jpg?v=1779817800','IMG_20593.jpg?v=1779817800','IMG_20594.jpg?v=1779817800','IMG_20595.jpg?v=1779817800','IMG_20596.jpg?v=1779817800','IMG_20597.jpg?v=1779817800','IMG_20598.jpg?v=1779817800','IMG_20599.jpg?v=1779817800','IMG_20600.jpg?v=1779817800'],
+ desc:'ABARTH 595 TJet 145cv Turismo. Año 12/2015 · 108.000 km con mantenimiento riguroso al día. 2 propietarios · 2 llaves · Libre de siniestros. Pintura original · Muelles Eibach homologados · Correa de distribución cambiada · ITV al día.'},
+{id:2,brand:'Audi',name:'A3 Sportback 1.0 TFSI 116cv S-tronic S-line edition',year:2021,km:'—',fuel:'Gasolina',cv:'116 cv',caja:'S-tronic automático',traccion:'Delantera',color:'Negro',etiqueta:'C',price:17900,old:null,badge:'Disponible',
+ extras:['Acabado S-line','Navegación','Sensores aparcamiento','Faros LED','Llantas 18"','Climatizador automático'],
+ imgs:['IMG_8357.jpg?v=1779817625','IMG_8359.jpg?v=1779817625','IMG_8360.jpg?v=1779817626','IMG_8361.jpg?v=1779817626','IMG_8362.jpg?v=1779817626','IMG_8363.jpg?v=1779817626','IMG_8364.jpg?v=1779817626','IMG_8365.jpg?v=1779817626','IMG_8366.jpg?v=1779817626','IMG_8367.jpg?v=1779817626','IMG_8368.jpg?v=1779817626','IMG_8369.jpg?v=1779817626','IMG_8370.jpg?v=1779817626','IMG_8371.jpg?v=1779817626','IMG_8372.jpg?v=1779817626','IMG_8373.jpg?v=1779817626','IMG_8374.jpg?v=1779817626','IMG_8375.jpg?v=1779817626','IMG_8376.jpg?v=1779817626','IMG_8377.jpg?v=1779817626'],
+ desc:'Audi A3 Sportback S-line edition con caja automática S-tronic. Equipamiento premium, económico y eficiente. Garantía 1 año · IVA incluido.'},
+{id:3,brand:'Volkswagen',name:'Golf GTI Performance 230cv 2.0 TSI DSG',year:2014,km:'—',fuel:'Gasolina',cv:'230 cv',caja:'DSG automático',traccion:'Delantera',color:'Blanco',etiqueta:'C',price:16900,old:null,badge:'Disponible',
+ extras:['Diferencial deslizamiento limitado','Frenos Brembo','DCC amortiguadores adaptativos','Faros xenón','Llantas Pretoria 18"','Navegación'],
+ imgs:['IMG_8026.jpg?v=1778003963','IMG_8027.jpg?v=1778003963','IMG_8028.jpg?v=1778003963','IMG_8029.jpg?v=1778003963','IMG_8030.jpg?v=1778003963','IMG_8031.jpg?v=1778003963','IMG_8032.jpg?v=1778003963','IMG_8033.jpg?v=1778003963','IMG_8034.jpg?v=1778003963','IMG_8035.jpg?v=1778003963','IMG_8036.jpg?v=1778003963','IMG_8037.jpg?v=1778003963','IMG_8038.jpg?v=1778003963','IMG_8039.jpg?v=1778003963','IMG_8040.jpg?v=1778003963','IMG_8041.jpg?v=1778003963','IMG_8042.jpg?v=1778003963','IMG_8043.jpg?v=1778003963','IMG_8044.jpg?v=1778003963','IMG_8045.jpg?v=1778003963'],
+ desc:'Golf GTI Performance 230cv con DSG. Diferencial de deslizamiento limitado y frenos Brembo de serie. Revisado · Garantía 1 año · IVA incluido.'},
+{id:4,brand:'Audi',name:'A6 Avant 3.0 BiTDI 326cv',year:2017,km:'—',fuel:'Diésel',cv:'326 cv',caja:'Automático',traccion:'quattro 4x4',color:'Negro',etiqueta:'B',price:28900,old:null,badge:'Disponible',
+ extras:['Tracción quattro','Techo panorámico','Faros Matrix LED','Head-up display','Asientos calefactados','Cámara 360°'],
+ imgs:['IMG_7544.jpg?v=1774869134','IMG_7545.jpg?v=1774869134','IMG_7546.jpg?v=1774869134','IMG_7547.jpg?v=1774869134','IMG_7548.jpg?v=1774869134','IMG_7549.jpg?v=1774869134','IMG_7550.jpg?v=1774869134','IMG_7551.jpg?v=1774869134','IMG_7552.jpg?v=1774869134','IMG_7553.jpg?v=1774869134','IMG_7554.jpg?v=1774869134','IMG_7555.jpg?v=1774869134','IMG_7556.jpg?v=1774869134','IMG_7557.jpg?v=1774869134','IMG_7558.jpg?v=1774869134','IMG_7559.jpg?v=1774869134','IMG_7560.jpg?v=1774869134','IMG_7561.jpg?v=1774869134','IMG_7562.jpg?v=1774869134','IMG_7563.jpg?v=1774869134'],
+ desc:'Audi A6 Avant BiTDI 326cv con tracción quattro. Familiar premium de alto rendimiento. Garantía 1 año · IVA incluido.'},
+{id:5,brand:'Audi',name:'S6 Avant 3.0 TDI 350cv',year:2020,km:'113.000 km',fuel:'Diésel',cv:'350 cv',caja:'Tiptronic automático',traccion:'quattro 4x4',color:'Gris Nardo',etiqueta:'ECO',price:49900,old:52900,badge:'Oferta',
+ extras:['Tracción quattro','Air Suspension neumática','Asientos S con memoria','Techo panorámico','Faros Matrix LED','Head-up display','Bang & Olufsen','Cámara 360°','Etiqueta ECO'],
+ imgs:['IMG_68272.jpg?v=1773695838','IMG_68282.jpg?v=1773695839','IMG_6829.jpg?v=1773695839','IMG_6830.jpg?v=1773695839','IMG_6831.jpg?v=1773695839','IMG_6832.jpg?v=1773695839','IMG_6833.jpg?v=1773695839','IMG_6834.jpg?v=1773695839','IMG_6835.jpg?v=1773695839','IMG_6836.jpg?v=1773695839','IMG_6837.jpg?v=1773695839','IMG_6838.jpg?v=1773695839','IMG_6839.jpg?v=1773695839','IMG_6840.jpg?v=1773695839','IMG_6841.jpg?v=1773695839','IMG_6842.jpg?v=1773695839','IMG_6843.jpg?v=1773695839','IMG_6844.jpg?v=1773695839','IMG_6845.jpg?v=1773695839','IMG_6846.jpg?v=1773695839'],
+ desc:'Audi S6 Avant 3.0 TDI 350cv. Año 2020 · 113.000 km. Suspensión neumática, etiqueta ECO. Garantía 1 año · IVA incluido.'},
+{id:6,brand:'Mercedes-Benz',name:'Clase B 180 Manual',year:2019,km:'—',fuel:'Gasolina',cv:'136 cv',caja:'Manual 6 vel.',traccion:'Delantera',color:'Blanco',etiqueta:'C',price:16900,old:17900,badge:'Oferta',
+ extras:['Navegación MBUX','Sensores aparcamiento','Cámara trasera','Faros LED','Asistente carril'],
+ imgs:['IMG_8047.jpg?v=1777998871','IMG_8048.jpg?v=1777998872','IMG_8049.jpg?v=1777998872','IMG_8050.jpg?v=1777998872','IMG_8051.jpg?v=1777998872','IMG_8052.jpg?v=1777998872','IMG_8053.jpg?v=1777998872','IMG_8054.jpg?v=1777998872','IMG_8055.jpg?v=1777998872','IMG_8056.jpg?v=1777998872','IMG_8057.jpg?v=1777998872','IMG_8058.jpg?v=1777998872','IMG_8059.jpg?v=1777998872','IMG_8060.jpg?v=1777998872','IMG_8061.jpg?v=1777998872','IMG_8062.jpg?v=1777998872','IMG_8063.jpg?v=1777998872','IMG_8064.jpg?v=1777998872','IMG_8065.jpg?v=1777998872','IMG_8066.jpg?v=1777998872'],
+ desc:'Mercedes-Benz Clase B 180 Manual. Monovolumen compacto, práctico y espacioso. Garantía 1 año · IVA incluido.'},
+{id:7,brand:'BMW',name:'X5 M50d año 2019',year:2019,km:'—',fuel:'Diésel',cv:'400 cv',caja:'Automático 8 vel.',traccion:'xDrive 4x4',color:'Blanco Alpine',etiqueta:'B',price:53900,old:null,badge:'Disponible',
+ extras:['Único propietario','Pack M exterior e interior','Asientos eléctricos memoria y calefacción','Piel marrón','Techo panorámico doble iluminado','Cámara 360°','Asistente aparcamiento','Frenado autónomo','Suspensión adaptativa M'],
+ imgs:['IMG_7009.jpg?v=1773694817','IMG_70102.jpg?v=1773694817','IMG_70112.jpg?v=1773694818','IMG_7012.jpg?v=1773694817','IMG_70132.jpg?v=1773694817','IMG_70142.jpg?v=1773694817','IMG_70152.jpg?v=1773694818','IMG_70162.jpg?v=1773694817','IMG_7017.jpg?v=1773694817','IMG_70202.jpg?v=1773694817','IMG_70212.jpg?v=1773694817','IMG_70222.jpg?v=1773694817','IMG_70232.jpg?v=1773694816','IMG_70252.jpg?v=1773694817','IMG_70272.jpg?v=1773694817','IMG_70282.jpg?v=1773694818','IMG_70292.jpg?v=1773694819','IMG_70302.jpg?v=1773694817','IMG_70312.jpg?v=1773694817','IMG_7032.jpg?v=1773694817','IMG_7033.jpg?v=1773694817','IMG_7034.jpg?v=1773694819'],
+ desc:'BMW X5 M50d 400cv — ÚNICO PROPIETARIO. Pack M exterior e interior. Asientos eléctricos con memoria y calefacción, piel marrón. Techo panorámico doble iluminado. Cámara 360°, asistente aparcamiento, frenado autónomo, suspensión adaptativa M.'},
+{id:8,brand:'Mercedes-Benz',name:'C43 AMG Estate año 2019',year:2019,km:'—',fuel:'Gasolina',cv:'390 cv',caja:'Automático 9 vel.',traccion:'4Matic 4x4',color:'Gris Selenita',etiqueta:'C',price:32900,old:null,badge:'Disponible',
+ extras:['Tracción 4Matic','Suspensión AMG','Frenos AMG','Escape AMG','Asientos AMG calefactados','Faros Multibeam LED','Cámara 360°','Pack Night'],
+ imgs:['IMG_7235.jpg?v=1773694538','IMG_7236.jpg?v=1773694539','IMG_7237.jpg?v=1773694539','IMG_7238.jpg?v=1773694539','IMG_7239.jpg?v=1773694539','IMG_7240.jpg?v=1773694539','IMG_7241.jpg?v=1773694539','IMG_7242.jpg?v=1773694539','IMG_7243.jpg?v=1773694539','IMG_7244.jpg?v=1773694539','IMG_7245.jpg?v=1773694539','IMG_7246.jpg?v=1773694539','IMG_7247.jpg?v=1773694539','IMG_7248.jpg?v=1773694539','IMG_7249.jpg?v=1773694539','IMG_7250.jpg?v=1773694539','IMG_7251.jpg?v=1773694539','IMG_7252.jpg?v=1773694539','IMG_7253.jpg?v=1773694539','IMG_7254.jpg?v=1773694539'],
+ desc:'Mercedes-Benz C43 AMG Estate 390cv. Motor V6 biturbo, tracción 4Matic permanente. Deportividad y versatilidad en estado puro. Garantía 1 año · IVA incluido.'},
+{id:9,brand:'Audi',name:'RS3 Sportback S-tronic año 2017',year:2017,km:'—',fuel:'Gasolina',cv:'400 cv',caja:'S-tronic automático',traccion:'quattro 4x4',color:'Negro Mythos',etiqueta:'C',price:37900,old:null,badge:'Disponible',
+ extras:['Motor 5 cilindros','Tracción quattro','Diferencial trasero','Frenos Brembo','Escape Akrapovic','Llantas RS 19"','DCC','Faros Matrix LED'],
+ imgs:['IMG_6889.jpg?v=1771517966','IMG_6890.jpg?v=1771517965','IMG_6891.jpg?v=1771517965','IMG_6892.jpg?v=1771517965','IMG_6893.jpg?v=1771517965','IMG_6894.jpg?v=1771517965','IMG_6895.jpg?v=1771517965','IMG_6896.jpg?v=1771517965','IMG_6897.jpg?v=1771517965','IMG_6898.jpg?v=1771517965','IMG_6899.jpg?v=1771517965','IMG_6900.jpg?v=1771517965','IMG_6901.jpg?v=1771517965','IMG_6902.jpg?v=1771517965','IMG_6903.jpg?v=1771517965','IMG_6904.jpg?v=1771517965','IMG_6905.jpg?v=1771517965','IMG_6906.jpg?v=1771517965','IMG_6907.jpg?v=1771517965','IMG_6908.jpg?v=1771517965'],
+ desc:'Audi RS3 Sportback S-tronic 2017. Motor 5 cilindros 400cv, tracción quattro integral. El compacto más extremo de Audi. Garantía 1 año · IVA incluido.'},
+{id:10,brand:'Volkswagen',name:'Polo GTI 180cv DSG año 2011',year:2011,km:'—',fuel:'Gasolina',cv:'180 cv',caja:'DSG automático',traccion:'Delantera',color:'Blanco',etiqueta:'C',price:13900,old:null,badge:'Disponible',
+ extras:['Frenos disco traseros','Llantas GTI 17"','Climatizador','Cruise control','Sensores aparcamiento'],
+ imgs:['IMG_6707.jpg?v=1770749613','IMG_6708.jpg?v=1770749614','IMG_6709.jpg?v=1770749614','IMG_6710.jpg?v=1770749614','IMG_6711.jpg?v=1770749614','IMG_6712.jpg?v=1770749614','IMG_6713.jpg?v=1770749614','IMG_6714.jpg?v=1770749614','IMG_6715.jpg?v=1770749614','IMG_6716.jpg?v=1770749614','IMG_6717.jpg?v=1770749614','IMG_6718.jpg?v=1770749614','IMG_6719.jpg?v=1770749614','IMG_6720.jpg?v=1770749614','IMG_6721.jpg?v=1770749614','IMG_6722.jpg?v=1770749614','IMG_6723.jpg?v=1770749614','IMG_6724.jpg?v=1770749614','IMG_6725.jpg?v=1770749614','IMG_6726.jpg?v=1770749614'],
+ desc:'Volkswagen Polo GTI 180cv con caja automática DSG. El pequeño deportivo de bolsillo. Garantía 1 año · IVA incluido.'},
+{id:11,brand:'Volkswagen',name:'Golf R 270cv 4Motion',year:2016,km:'—',fuel:'Gasolina',cv:'270 cv',caja:'Manual 6 vel.',traccion:'4Motion 4x4',color:'Azul Lapiz',etiqueta:'C',price:18900,old:null,badge:'Disponible',
+ extras:['Tracción 4Motion','DCC','Faros xenón','Llantas Pretoria 19"','Asientos calefactados','Climatizador'],
+ imgs:['IMG_56352.jpg?v=1769624382','IMG_56362.jpg?v=1769624384','IMG_5637.jpg?v=1769624384','IMG_5638.jpg?v=1769624384','IMG_5639.jpg?v=1769624384','IMG_5640.jpg?v=1769624384','IMG_5641.jpg?v=1769624384','IMG_5642.jpg?v=1769624384','IMG_5643.jpg?v=1769624384','IMG_5644.jpg?v=1769624384','IMG_5645.jpg?v=1769624384','IMG_5646.jpg?v=1769624384','IMG_5647.jpg?v=1769624384','IMG_5648.jpg?v=1769624384','IMG_5649.jpg?v=1769624384','IMG_5650.jpg?v=1769624384','IMG_5651.jpg?v=1769624384','IMG_5652.jpg?v=1769624384','IMG_5653.jpg?v=1769624384','IMG_5654.jpg?v=1769624384'],
+ desc:'Volkswagen Golf R 270cv con tracción integral 4Motion. El hot hatch definitivo. Garantía 1 año · IVA incluido.'},
+{id:12,brand:'Volkswagen',name:'Polo 2.0 TSI GTI cambio manual',year:2022,km:'—',fuel:'Gasolina',cv:'207 cv',caja:'Manual 6 vel.',traccion:'Delantera',color:'Rojo Flash',etiqueta:'C',price:18900,old:null,badge:'Disponible',
+ extras:['Llantas GTI 17"','Frenos disco traseros','Climatizador','Sensores aparcamiento','Faros LED'],
+ imgs:['IMG_56962.jpg?v=1769624159','IMG_56972.jpg?v=1769624158','IMG_5698.jpg?v=1769624158','IMG_5699.jpg?v=1769624158','IMG_5700.jpg?v=1769624158','IMG_5701.jpg?v=1769624158','IMG_5702.jpg?v=1769624158','IMG_5703.jpg?v=1769624158','IMG_5704.jpg?v=1769624158','IMG_5705.jpg?v=1769624158','IMG_5706.jpg?v=1769624158','IMG_5707.jpg?v=1769624158','IMG_5708.jpg?v=1769624158','IMG_5709.jpg?v=1769624158','IMG_5710.jpg?v=1769624158','IMG_5711.jpg?v=1769624158','IMG_5712.jpg?v=1769624158','IMG_5713.jpg?v=1769624158','IMG_5714.jpg?v=1769624158','IMG_5715.jpg?v=1769624158'],
+ desc:'Volkswagen Polo 2.0 TSI GTI 207cv con cambio manual. Nueva generación del GTI más divertido. Garantía 1 año · IVA incluido.'},
+{id:13,brand:'Audi',name:'S4 Avant 3.0 TFSI V6 354cv',year:2018,km:'—',fuel:'Gasolina',cv:'354 cv',caja:'Tiptronic automático',traccion:'quattro 4x4',color:'Gris Quantum',etiqueta:'C',price:39900,old:null,badge:'Disponible',
+ extras:['Motor V6 Supercharged','Tracción quattro','Frenos compuestos','Llantas S 19"','Asientos S calefactados','Techo panorámico','Bang & Olufsen'],
+ imgs:['IMG_4006.jpg?v=1758826990','IMG_4007.jpg?v=1758826990','IMG_4008.jpg?v=1758826990','IMG_4009.jpg?v=1758826990','IMG_4010.jpg?v=1758826990','IMG_4011.jpg?v=1758826990','IMG_4012.jpg?v=1758826990','IMG_4013.jpg?v=1758826990','IMG_4014.jpg?v=1758826990','IMG_4015.jpg?v=1758826990','IMG_4016.jpg?v=1758826990','IMG_4017.jpg?v=1758826990','IMG_4018.jpg?v=1758826990','IMG_4019.jpg?v=1758826990','IMG_4020.jpg?v=1758826990','IMG_4021.jpg?v=1758826990','IMG_4022.jpg?v=1758826990','IMG_4023.jpg?v=1758826990','IMG_4024.jpg?v=1758826990','IMG_4025.jpg?v=1758826990'],
+ desc:'Audi S4 Avant 3.0 TFSI V6 354cv con tracción quattro. La berlina familiar más deportiva de Audi. Garantía 1 año · IVA incluido.'},
+{id:14,brand:'Porsche',name:'991 Carrera S Cabrio PDK',year:2012,km:'—',fuel:'Gasolina',cv:'400 cv',caja:'PDK 7 vel.',traccion:'Trasera',color:'Blanco Carrara',etiqueta:'C',price:72900,old:null,badge:'Disponible',
+ extras:['Motor 3.8L 400cv','PDK 7 velocidades','Sport Chrono','PASM suspensión activa','Llantas Carrera 20"','Asientos calefactados','Bose Sound','PDLS luces directivas','Capota eléctrica'],
+ imgs:['IMG_3563.jpg?v=1758033603','IMG_3564.jpg?v=1758033603','IMG_3565.jpg?v=1758033603','IMG_3566.jpg?v=1758033603','IMG_3567.jpg?v=1758033603','IMG_3568.jpg?v=1758033603','IMG_3569.jpg?v=1758033603','IMG_3570.jpg?v=1758033603','IMG_3571.jpg?v=1758033603','IMG_3572.jpg?v=1758033603','IMG_3573.jpg?v=1758033603','IMG_3574.jpg?v=1758033603','IMG_3575.jpg?v=1758033603','IMG_3576.jpg?v=1758033603','IMG_3577.jpg?v=1758033603','IMG_3578.jpg?v=1758033603','IMG_3579.jpg?v=1758033603','IMG_3580.jpg?v=1758033603','IMG_3581.jpg?v=1758033603','IMG_3582.jpg?v=1758033603'],
+ desc:'Porsche 991 Carrera S Cabriolet PDK. Motor 3.8L 400cv, Sport Chrono y PASM de serie. El cabriolet de referencia. Garantía 1 año · IVA incluido.'},
+];
+const SOLD=[
+{name:'KIA Soul 1.6 GDI 33.000km',price:'13.900 €',imgs:['IMG_4608.jpg?v=1769624524','IMG_4609.jpg?v=1769624523']},
+{name:'Audi S3 Sportback',price:'27.900 €',imgs:['IMG_24392.jpg?v=1752760083','IMG_24412.jpg?v=1752760083']},
+{name:'Cupra Born 77kWh 231cv Boost',price:'31.900 €',imgs:['PHOTO-2025-12-19-15-23-18.jpg?v=1771835032','PHOTO-2025-12-19-15-23-19.jpg?v=1771835032']},
+{name:'Volkswagen Polo 1.0 TSI 95cv',price:'15.900 €',imgs:['IMG_7764.jpg?v=1776361712','IMG_7765.jpg?v=1776361712']},
+{name:'Audi TTS Roadster',price:'47.900 €',imgs:['IMG_1741.jpg?v=1752760344','IMG_1742.jpg?v=1752760344']},
+{name:'Abarth 595 Turismo 165cv Automático',price:'13.900 €',imgs:['IMG_7426.jpg?v=1774520621','IMG_74272.jpg?v=1774520620']},
+{name:'Seat Tarraco FR4 190cv DSG 7 plazas',price:'37.900 €',imgs:['IMG_4297.jpg?v=1760033139','IMG_4299.jpg?v=1760033139']},
+{name:'Range Rover Velar D240 S 2018',price:'29.900 €',imgs:['IMG_3778.jpg?v=1758823994','IMG_3779.jpg?v=1758823994']},
+{name:'Volkswagen T-Roc R 300cv DSG Akrapovic',price:'42.900 €',imgs:['IMG_6767.jpg?v=1770983043','IMG_6768.jpg?v=1770983041']},
+{name:'Audi A5 Sportback 2.0 TDI S-tronic',price:'21.900 €',imgs:['IMG_65542.jpg?v=1770984088','IMG_65552.jpg?v=1770984089']},
+{name:'Volkswagen Multivan 2.0 TDI 150cv DSG 7 plazas',price:'42.900 €',imgs:['WhatsAppImage2025-10-16at10.21.57.jpg?v=1760718640','WhatsAppImage2025-10-16at10.21.57_1.jpg?v=1760718640']},
+{name:'Volkswagen Golf GTD 2.0 TDI DSG 200cv',price:'27.900 €',imgs:['IMG_4482.jpg?v=1760608286','IMG_4483.jpg?v=1760608287']},
+{name:'Mercedes-Benz C220d Coupé 2018',price:'28.900 €',imgs:['IMG_9437.jpg?v=1739893255','IMG_9438.jpg?v=1739893256']},
+{name:'Skoda Karoq 2.0 TDI Style 200cv DSG',price:'39.900 €',imgs:['PHOTO-2025-08-21-22-01-51.jpg?v=1757002692','PHOTO-2025-08-21-22-01-522.jpg?v=1757002691']},
+{name:'Mercedes-Benz Clase A 200d AMG Line',price:'15.900 €',imgs:['IMG_3799.jpg?v=1758827253','IMG_3800.jpg?v=1758827253']},
+{name:'BMW X4 M Competition 510cv',price:'56.900 €',imgs:['IMG_3974.jpg?v=1759253312','IMG_3976.jpg?v=1759253312']},
+];
+const B='https://www.rcconsulting.es/cdn/shop/files/';
+const img=(f)=>B+f+'&width=1200';
+
+// i18n minimal
+const LNG={
+ es:{buy:'Quiero Comprar',sell:'Vender mi coche',find:'Busco un coche en concreto',eye:'Asesoría de Compraventa · Sabadell',h:'Compra o vende tu vehículo con total seguridad',sub:'Asesoramiento personalizado, garantía de 1 año y gestión completa. Sin estrés, al mejor precio.',sold:'Vendido',sale:'En venta',cta:'Contactar'},
+ ca:{buy:'Vull Comprar',sell:'Vendre el meu cotxe',find:'Busco un cotxe en concret',eye:'Assessoria de Compravenda · Sabadell',h:'Compra o ven el teu vehicle amb total seguretat',sub:"Assessorament personalitzat, garantia d'1 any i gestió completa. Sense estrès.",sold:'Venut',sale:'En venda',cta:'Contactar'},
+ en:{buy:'I want to Buy',sell:'Sell my car',find:'Looking for a specific car',eye:'Vehicle Advisory · Sabadell',h:'Buy or sell your vehicle with complete peace of mind',sub:'Personalised advice, 1-year warranty, full management. Stress-free, best price.',sold:'Sold',sale:'For sale',cta:'Contact us'},
+};
+let lang='es';
+
+function setL(l){
+ lang=l;
+ document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+ document.getElementById('te').textContent=LNG[l].eye;
+ document.getElementById('th').textContent=LNG[l].h;
+ document.getElementById('ts').textContent=LNG[l].sub;
+ document.getElementById('tb').textContent=LNG[l].buy;
+ document.getElementById('tv').textContent=LNG[l].sell;
+ document.getElementById('ncta').textContent=LNG[l].cta;
+ renderAll();
+}
+
+// Hero: show video; fallback to slideshow if video fails
+function initHero(){
+ const v=document.getElementById('hv');
+ const sl=document.getElementById('hslides');
+ // Prepare slideshow as fallback
+ sl.innerHTML=CARS.map((c,i)=>`<div class="hs" style="background-image:url('${img(c.imgs[0])}')" data-i="${i}"></div>`).join('');
+ let hi=0;
+ const slides=sl.querySelectorAll('.hs');
+ // Use video if available
+ v.addEventListener('error',()=>{
+  v.style.display='none';
+  slides[0].classList.add('active');
+  setInterval(()=>{slides[hi].classList.remove('active');hi=(hi+1)%slides.length;slides[hi].classList.add('active');},3000);
+ });
+ // Also run slideshow under video for when video not supported
+ v.addEventListener('canplay',()=>{v.style.display='block'});
+}
+
+// Slider
+let si=0,si2=[];
+function buildSlider(imgs2){
+ si2=imgs2;si=0;
+ const dots=imgs2.map((_,i)=>`<button class="sd${i===0?' active':''}" onclick="gs(${i})"></button>`).join('');
+ document.getElementById('dslider').innerHTML=`
+  <div class="sw">
+   <div class="st2" id="slt">${imgs2.map(f=>`<img src="${img(f)}" alt="" loading="lazy">`).join('')}</div>
+   <button class="sb sp2" onclick="gs(si-1)">&#8592;</button>
+   <button class="sb sn" onclick="gs(si+1)">&#8594;</button>
+   <div class="sds" id="sds">${dots}</div>
+   <div class="sc2" id="sc2">1 / ${imgs2.length}</div>
+  </div>`;
+}
+function gs(n){
+ si=(n+si2.length)%si2.length;
+ document.getElementById('slt').style.transform=`translateX(-${si*100}%)`;
+ document.querySelectorAll('.sd').forEach((d,i)=>d.classList.toggle('active',i===si));
+ document.getElementById('sc2').textContent=`${si+1} / ${si2.length}`;
+}
+
+function fmt(n){return n.toLocaleString('es-ES')+'\u00a0\u20ac'}
+
+function card(c){
+ return`<div class="cc" onclick="openD(${c.id})">
+  <div class="ci"><img src="${img(c.imgs[0])}" alt="${c.brand} ${c.name}" loading="lazy">
+   <div class="bdg${c.old?' o':''}">${c.badge}</div></div>
+  <div class="cb">
+   <div class="cbr">${c.brand}</div>
+   <h3 class="cn">${c.name}</h3>
+   <div class="csp">
+    <span class="sp">${c.year}</span><span class="sp">${c.fuel}</span>
+    <span class="sp">${c.cv}</span>${c.km!=='—'?`<span class="sp">${c.km}</span>`:''}
+   </div>
+   <div class="cf">
+    <div class="cpr">${fmt(c.price)}${c.old?`<span class="cop">${fmt(c.old)}</span>`:''}</div>
+    <button class="bsm">Ver m\u00e1s</button>
+   </div>
+  </div></div>`;
+}
+
+let sorted=[...CARS];
+function sortC(){
+ const v=document.getElementById('srt').value;
+ sorted=[...CARS];
+ if(v==='pa')sorted.sort((a,b)=>a.price-b.price);
+ else if(v==='pd')sorted.sort((a,b)=>b.price-a.price);
+ else if(v==='yd')sorted.sort((a,b)=>b.year-a.year);
+ document.getElementById('invG').innerHTML=sorted.map(card).join('');
+ document.getElementById('cnt').textContent=sorted.length+' veh\u00edculos disponibles';
+}
+
+function renderAll(){
+ document.getElementById('featG').innerHTML=CARS.slice(0,6).map(card).join('');
+ sortC();
+ document.getElementById('galG').innerHTML=SOLD.map((s,i)=>`
+  <div class="cc" onclick="openSold(${i})">
+   <div class="ci"><img src="${B+s.imgs[0]+'&width=600'}" alt="${s.name}" loading="lazy">
+    <div class="bdg">${LNG[lang].sold}</div></div>
+   <div class="cb">
+    <div class="cbr">${LNG[lang].sold}</div>
+    <h3 class="cn">${s.name}</h3>
+    <div class="cf"><div class="cpr">${s.price}</div><button class="bsm">Ver fotos</button></div>
+   </div>
+  </div>`).join('');
+}
+
+function openSold(i){
+ const s=SOLD[i];
+ buildSlider(s.imgs);
+ document.getElementById('dleft').innerHTML=`
+  <div class="dbr2">${LNG[lang].sold}</div>
+  <h1 class="dt">${s.name}</h1>
+  <div class="sg"><div class="sb2"><div class="sl">Precio de venta</div><div class="sv">${s.price}</div></div><div class="sb2"><div class="sl">Estado</div><div class="sv">${LNG[lang].sold}</div></div></div>
+  <p class="dd">Este vehículo pasó por RC Consulting y fue vendido a un cliente satisfecho. Si buscas algo similar, contáctanos: encontramos el vehículo perfecto para ti.</p>`;
+ document.getElementById('dright').innerHTML=`
+  <div class="pl">Precio de venta</div>
+  <div class="bp">${s.price}</div>
+  <div style="margin-bottom:22px"></div>
+  <a class="wab" href="https://wa.me/34648087165?text=${encodeURIComponent('Hola, vi el '+s.name+' en la galería. ¿Tenéis algo similar disponible?')}" target="_blank">\ud83d\udcac Consultar por WhatsApp</a>
+  <button class="csb" onclick="go('buy')">\ud83d\ude97 Ver vehículos disponibles</button>
+  <div class="gb"><h4>\u2713 \u00bfBuscas algo parecido?</h4><p>Contáctanos y te ayudamos a encontrar tu próximo vehículo.</p></div>`;
+ document.getElementById('dcs').innerHTML=`
+  <div><h4>\ud83d\udce7 Email</h4><div class="cv">info@rcconsulting.es</div><div class="cu">Respondemos en &lt;24h</div><a href="mailto:info@rcconsulting.es" class="dcb bk">Enviar email</a></div>
+  <div><h4>\ud83d\udccd Showroom</h4><div class="cv">C/Taul\u00ed 15, Sabadell</div><div class="cu">Lun\u2013Vie 9:00\u201313:30 \u00b7 16:00\u201319:30</div><button class="dcb bk" onclick="document.getElementById('calM').classList.add('open')">\ud83d\udcc5 Agendar cita</button></div>
+  <div><h4>\ud83d\udcac WhatsApp</h4><div class="cv">+34 648 087 165</div><div class="cu">Respuesta inmediata</div><a href="https://wa.me/34648087165" target="_blank" class="dcb wa">Abrir WhatsApp</a></div>`;
+ go('detail');
+}
+
+function openD(id){
+ const c=CARS.find(x=>x.id===id);
+ buildSlider(c.imgs);
+ const specs=[['A\u00f1o',c.year],['Combustible',c.fuel],['Potencia',c.cv],['Kil\u00f3metros',c.km],['Caja',c.caja],['Tracci\u00f3n',c.traccion],['Color',c.color],['Etiqueta DGT',c.etiqueta],['Garant\u00eda','1 a\u00f1o'],['IVA','Incluido']];
+ document.getElementById('dleft').innerHTML=`
+  <div class="dbr2">${c.brand}</div>
+  <h1 class="dt">${c.name}</h1>
+  <div class="sg">${specs.map(([l,v])=>`<div class="sb2"><div class="sl">${l}</div><div class="sv">${v}</div></div>`).join('')}</div>
+  <p class="dd">${c.desc}</p>
+  ${c.extras.length?`<div class="es"><h4>\u2713 Extras y equipamiento</h4><div class="el">${c.extras.map(e=>`<span class="et">${e}</span>`).join('')}</div></div>`:''}`;
+ const msg=encodeURIComponent(`Hola, me interesa el ${c.brand} ${c.name} (${c.year}) a ${fmt(c.price)}. \u00bfSigue disponible?`);
+ document.getElementById('dright').innerHTML=`
+  <div class="pl">Precio</div>
+  <div class="bp">${fmt(c.price)}</div>
+  ${c.old?`<div class="op">Antes: ${fmt(c.old)}</div>`:'<div style="margin-bottom:22px"></div>'}
+  <a class="wab" href="https://wa.me/34648087165?text=${msg}" target="_blank">\ud83d\udcac Consultar por WhatsApp</a>
+  <button class="csb" onclick="go('contact')">\ud83d\udccb Formulario de contacto</button>
+  <div class="gb"><h4>\u2713 Garant\u00eda 1 a\u00f1o incluida</h4><p>Revisado por nuestro equipo. IVA incluido en el precio.</p></div>`;
+ document.getElementById('dcs').innerHTML=`
+  <div><h4>\ud83d\udce7 Email</h4><div class="cv">info@rcconsulting.es</div><div class="cu">Respondemos en &lt;24h</div><a href="mailto:info@rcconsulting.es?subject=Consulta ${c.brand} ${c.name}" class="dcb bk">Enviar email</a></div>
+  <div><h4>\ud83d\udccd Showroom</h4><div class="cv">C/Taul\u00ed 15, Sabadell</div><div class="cu">Lun\u2013Vie 9:00\u201313:30 \u00b7 16:00\u201319:30</div><button class="dcb bk" onclick="document.getElementById('calM').classList.add('open')">\ud83d\udcc5 Agendar cita</button></div>
+  <div><h4>\ud83d\udcac WhatsApp</h4><div class="cv">+34 648 087 165</div><div class="cu">Respuesta inmediata</div><a href="https://wa.me/34648087165?text=${msg}" target="_blank" class="dcb wa">Abrir WhatsApp</a></div>`;
+ go('detail');
+}
+
+function go(n){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById('page-'+n).classList.add('active');
+ document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+ const nl=document.getElementById('nl-'+n);if(nl)nl.classList.add('active');
+ document.querySelector('.page.active').appendChild(document.getElementById('foot'));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleM(){document.getElementById('mob').classList.toggle('open')}
+
+// Scroll reveal
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>document.getElementById('nv').classList.toggle('sc',window.scrollY>20));
+
+initHero();
+renderAll();
+</script>
+</body>
+</html>
